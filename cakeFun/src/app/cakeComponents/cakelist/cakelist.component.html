@@ -1,0 +1,30 @@
+
+<div id="cakeContainer">
+
+    <div class="cakeRow" *ngFor='let cake of cakes'>
+        <img src="{{cake.image}}" (click)="displayCake(cake)">
+        <!-- rating cakes -->
+        <form> 
+            <select name="rated" id="stars" [(ngModel)]="cake.addRating.stars">
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Stars</option>
+            </select>
+            
+            <!-- need a text area for comments -->
+            <textarea name="comment" cols="10" rows="10" placeholder="Type comment here" [(ngModel)]="cake.addRating.comment"></textarea>
+            <!-- need a submit button  -->
+            <input type="submit" class="rate" value="Rate" (click)="rate(cake)">
+        </form>
+    </div>
+
+
+</div>
+
+
+
+<app-cake-info *ngIf="selectedCake" [cakesToShow]="selectedCake" [avg]="avg"></app-cake-info>
+
+

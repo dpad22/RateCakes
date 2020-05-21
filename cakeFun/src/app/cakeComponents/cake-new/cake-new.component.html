@@ -1,0 +1,11 @@
+
+<div class="container">
+    <form (submit)="create()">
+        <p>Submit a cake to be rated</p>
+        <label for="baker">Baker: </label>
+        <input type="text" name="baker" [(ngModel)]=newCake.baker>
+        <label for="image">Image: </label>
+        <input type="text" name="image" [(ngModel)]=newCake.image>
+        <input type="submit" value="Submit">
+    </form>
+</div>

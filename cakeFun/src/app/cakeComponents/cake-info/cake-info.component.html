@@ -1,0 +1,18 @@
+
+<div class="row">
+
+    <h2>Baked by {{cakesToShow.baker}}</h2>
+
+    <div class="column">
+        <img src="{{cakesToShow.image}}" class="image">
+        <p>Average Rating: {{avg}} stars</p>
+    </div>
+        <div class="column">
+            <ul *ngFor="let review of cakesToShow.ratings"
+                class="comments">
+                    <li>{{review.stars}} stars</li>
+                    <li>{{review.comment}}</li>
+                    <hr>
+            </ul>
+        </div>
+</div>
